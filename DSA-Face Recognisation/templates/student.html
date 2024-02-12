@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block head %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 200px auto; /* This centers the div horizontally */
+            background-color: #fff;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .student-info {
+            display: flex;
+            align-items: center;
+        }
+        
+        .student-image {
+            flex: 1;
+            padding: 10px;
+        }
+        
+        .student-image img {
+            max-width: 100%;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+        }
+        
+        .student-details {
+            flex: 2;
+            text-align: left;
+            padding: 10px;
+        }
+        
+        .student-details h2 {
+            font-size: 24px;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        
+        .student-details p {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        
+        .attendance-info {
+            margin-top: 20px;
+        }
+        
+        /* Add more CSS styles as needed */
+        
+    </style>
+    {% endblock %}
+
+    {% block content %}
+
+    <div class="container">
+        <div class="student-info">
+            <div class="student-image">
+                {% comment %} <img src="{% static 'training_data\44\IMG20230917144613 - Mallavarapu Sai.jpg' %}" alt="Student Image"> {% endcomment %}
+                <img src="{% static imgpath %}" alt="Student Image">
+            </div>
+            <div class="student-details">
+                <h2>{{first_name}}</h2>
+                {% comment %} <h2>{{last_name}}</h2> {% endcomment %}
+                <p>{{last_name}}</p>
+                <div class="attendance-info">
+                    <p>Days Present:{{ lis.0}}</p>
+                    <p>Days Absent: {{lis.1}}</p>
+                    <p>Percentage: {{lis.2}}</p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

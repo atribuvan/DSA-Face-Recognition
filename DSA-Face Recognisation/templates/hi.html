@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block head %}
+<style>
+    table {
+        margin-left:50px;
+        border-collapse: collapse;
+        width: 50%;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+   
+    <h1>{{ image_id }}</h1>
+    <!-- <ul>
+        {% for label in lab %}
+            <li>{{ label }}</li>
+        {% endfor %}
+    </ul> -->
+    <table>
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>Label Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for label in lab %}
+            <tr>
+                <td>{{ forloop.counter }}</td>  {# Use forloop.counter to generate serial number #}
+                <td>2200010{{ label }}</td>           {# Display the label number #}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <!-- Download CSV button -->
+    <a href="{% url 'serve_custom_file' filename='marking.csv' %}" download="marking.csv">
+        <button style="margin-left: 100px; margin-top: 30px;">Download CSV</button>
+    </a>
+    <a href="{% url 'download_marking_pdf' %}" class="btn btn-primary">Download PDF</a>
+
+    
+ 
+    {% endblock %}
+

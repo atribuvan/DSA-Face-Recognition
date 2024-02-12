@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Styled Page</title>
+    <style>
+        body {
+            background-color: rgb(92, 92, 170);
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            /* Align content at the top */
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .container{
+            background-color: lightblue;
+            margin-top: 150px;
+            text-align: center;
+            padding: 50px;
+            border-radius: 10px;
+        }
+        .button-container {
+            display: flex;
+            margin: 50px;
+            /* Adjust the margin-top value to control the content height */
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 18px;
+            background-color: #3498db;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .button:hover {
+            background-color: #2074a0;
+            color: #fff;
+            transform: scale(1.05);
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="container">
+        <h1>Face Attendence System</h1>
+
+        <div class="button-container">
+            <button class="button">Upload Photo</button>
+            <button class="button">Past Attendences</button>
+            <button class="button">Add/Update Student Info</button>
+            <!-- <button class="button">Button 3</button> -->
+        </div>
+    </div>
+</body>
+
+</html>

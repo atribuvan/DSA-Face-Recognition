@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance for {{ selected_date }}</title>
+</head>
+<body>
+    <h1>Attendance for {{ selected_date }}</h1>
+    <ul>
+        <p>Present students</p>
+        {% for student in present_students %}
+            <li>{{ student }}</li>
+            <!-- <li>{{ student.student.username }}</li> -->
+        {% endfor %}
+        <p>Absent students</p>
+        {% for student in not_present_users %}
+            <li>{{ student }}</li>
+            <!-- <li>{{ student.0 }}{{ student.1 }}</li> -->
+        {% endfor %}
+    </ul>
+</body>
+</html>
